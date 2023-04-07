@@ -86,12 +86,13 @@ function drawBlocks(){
 //Drawing score on the canvas
 function drawScore(){
     
+    
 }
 
 //Function to move paddle on the canvas
 function movePaddle(){
     paddle.x += paddle.dx;
-
+   
     //Surrounding wall detection
     //To the right side
     
@@ -107,12 +108,19 @@ function moveBall(){
     ball.y += ball.dy;
 
     //Surrounding wall collision detection(x-axis)
+    if(canvas.width<=ball.x||ball.x<0)
+    {
+        ball.dx=ball.dx*(-1)
+    }
     //right and left walls
     
 
     //Surrounding wall collision detection(y-axis)
     //top and bottom walls
-    
+    if(canvas.height<=ball.y||ball.y<0)
+    {
+        ball.dy=ball.dy*(-1)
+    }
 
     //Paddle collision functionality
     
@@ -147,14 +155,20 @@ function showAllBlocks(){
 }
 
 function showGamePauseText(){
+    let Gmpaus= "Game Paused"
+    console.log(Gmpaus)
     
 }
 
 function showLevelCompleteText(){
+    let uwon="You won!"
+    console.log(uwon)
     
 }
 
 function showGameOverText(){
+    let gmover="Game Over!"
+    console.log(gmover)
     
 }
 // Function called to draw all the canvas elements
