@@ -123,7 +123,13 @@ function moveBall(){
     }
 
     //Paddle collision functionality
-    
+    if(paddle.x<=ball.x||ball.x<0)
+{
+    ball.dx=ball.dx*(-1)
+}    
+if(paddle.y<=ball.y||ball.x<0){
+    ball.dy=ball.dy*(-1)
+}
 
     //Block collision functionality
     blocks.forEach(column => {
@@ -213,7 +219,6 @@ function keyDown(e){
 function keyUp(e){
     // console.log(e.key);
     if(e.key === 'Right' || e.key === 'ArrowRight' || e.key === 'Left' || e.key === 'ArrowLeft'){
-
     } 
 }
 
